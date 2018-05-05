@@ -1,0 +1,24 @@
+<div class="section">
+  <div>
+    <div class="main_circle" (click)="getNode()">
+      <div class="main_circle_border"></div>
+    </div>
+  </div>
+
+
+  <div class="container"  >
+    <div class='circle_container' *ngFor="let data of dataCurrent" [ngStyle]="{'transform': 'rotate(' + data.style.rotate + 'deg)'}">
+      <div class="circle main_view"    [routerLink]="['/gallary',data.id]" *ngIf="data.type==1" (click)="selectPicture(data)" [ngStyle]="{'marginLeft': +data.style.width+'px'}" ><div class="circle_border" ></div></div>
+      <div class="circle main_view_none" *ngIf="data.type==0" (click)="pushNotActiveNode()" [ngStyle]="{'marginLeft': +data.style.width+'px'}"><div class="circle_border"></div></div>
+    </div>
+  </div>
+
+
+</div>
+
+ <div class="information" (click)="closeInfoNoActiveNode()"  *ngIf="errorMainContent==true" >
+  <div class="text">
+    <p>{{error.text}}</p>
+   <!-- <button (click)="closeInfoNoActiveNode()">Close</button>-->
+  </div>
+</div>

@@ -1,0 +1,18 @@
+
+<div class="container_main">
+
+  <div class="main_picture">
+
+    <img [src]="currentPicture2.url" alt="main photo">
+
+  </div>
+  <div class="pictures" >
+    <div class="pictures_container" >
+      <img [src]="data.url" alt="foto" *ngFor="let data of dataMainPictures; let i=index" id="{{i}}" (click)="choosePicture(data.id)" >
+    </div>
+
+
+  </div>
+
+</div>
+
